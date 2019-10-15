@@ -48,3 +48,12 @@ extension RealmManager {
     }
     
 }
+
+extension RealmManager {
+    
+    func getObject<Element: Object>(type: Element.Type) -> Results<Element>? {
+        guard let realm = self.realm else { return nil }
+        return realm.objects(type)
+    }
+    
+}
