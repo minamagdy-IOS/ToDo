@@ -11,7 +11,7 @@
         <!--Root View Controller-->
         <scene sceneID="sDx-PG-aWD">
             <objects>
-                <tableViewController id="23L-4e-1gD" sceneMemberID="viewController">
+                <tableViewController id="23L-4e-1gD" customClass="ToDoTableViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kbm-n9-DNQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
         <!--Detail-->
         <scene sceneID="FJN-Nr-eyi">
             <objects>
-                <viewController id="H79-Nx-nRz" sceneMemberID="viewController">
+                <viewController id="H79-Nx-nRz" customClass="ToDoEditViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oFv-6t-5w6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
