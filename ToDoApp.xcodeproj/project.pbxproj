@@ -16,6 +16,8 @@
 		EB46528E2356388400F6CBB4 /* ToDoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46528D2356388400F6CBB4 /* ToDoEditViewController.swift */; };
 		EB46529223563A6E00F6CBB4 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46529123563A6E00F6CBB4 /* ToDoItem.swift */; };
 		EB46529423563AF500F6CBB4 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46529323563AF500F6CBB4 /* RealmManager.swift */; };
+		EBB69B6B2356E6A1003DC45B /* ToDoItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB69B6A2356E6A1003DC45B /* ToDoItemsViewModel.swift */; };
+		EBB69B6D2356FA7B003DC45B /* ToDoItemEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB69B6C2356FA7B003DC45B /* ToDoItemEditViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		EB46528D2356388400F6CBB4 /* ToDoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoEditViewController.swift; sourceTree = "<group>"; };
 		EB46529123563A6E00F6CBB4 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		EB46529323563AF500F6CBB4 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		EBB69B6A2356E6A1003DC45B /* ToDoItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsViewModel.swift; sourceTree = "<group>"; };
+		EBB69B6C2356FA7B003DC45B /* ToDoItemEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemEditViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 			children = (
 				EB465279235632AF00F6CBB4 /* AppDelegate.swift */,
 				EB46529323563AF500F6CBB4 /* RealmManager.swift */,
+				EBB69B6A2356E6A1003DC45B /* ToDoItemsViewModel.swift */,
+				EBB69B6C2356FA7B003DC45B /* ToDoItemEditViewModel.swift */,
 				EB46529023563A5600F6CBB4 /* Models */,
 				EB46528F23563A4B00F6CBB4 /* Views */,
 				EB46527F235632AF00F6CBB4 /* Main.storyboard */,
@@ -231,6 +237,8 @@
 				EB46527E235632AF00F6CBB4 /* ToDoTableViewController.swift in Sources */,
 				EB46527A235632AF00F6CBB4 /* AppDelegate.swift in Sources */,
 				EB46529423563AF500F6CBB4 /* RealmManager.swift in Sources */,
+				EBB69B6B2356E6A1003DC45B /* ToDoItemsViewModel.swift in Sources */,
+				EBB69B6D2356FA7B003DC45B /* ToDoItemEditViewModel.swift in Sources */,
 				EB46529223563A6E00F6CBB4 /* ToDoItem.swift in Sources */,
 				EB46528E2356388400F6CBB4 /* ToDoEditViewController.swift in Sources */,
 			);

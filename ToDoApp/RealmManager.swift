@@ -12,7 +12,7 @@ class RealmManager {
     
     static let sharedManager = RealmManager()
     
-    private var realm: Realm?
+    var realm: Realm?
     
 }
 
@@ -33,13 +33,6 @@ extension RealmManager {
         }
     }
     
-    func update(object: Object) throws {
-        guard let realm = self.realm else { return }
-        try realm.write {
-            realm.add(object, update: .modified)
-        }
-    }
-    
     func delete(object: Object) throws {
         guard let realm = self.realm else { return }
         try realm.write {
@@ -51,7 +44,7 @@ extension RealmManager {
 
 extension RealmManager {
     
-    func getObject<Element: Object>(type: Element.Type) -> Results<Element>? {
+    func getObjects<Element: Object>(type: Element.Type) -> Results<Element>? {
         guard let realm = self.realm else { return nil }
         return realm.objects(type)
     }

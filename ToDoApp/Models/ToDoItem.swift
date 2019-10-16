@@ -14,4 +14,10 @@ class ToDoItem: Object {
     
     @objc dynamic var detail = ""
     
+    convenience init(title: String, detail: String) {
+        self.init()
+        self.title = title
+        self.detail = detail
+    }
+    
 }
