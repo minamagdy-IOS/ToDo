@@ -13,7 +13,6 @@ private let cellIdentifier = "Cell"
 
 class ToDoTableViewController: UITableViewController {
     
-    private var results: Results<ToDoItem>?
     private var notificationToken: NotificationToken?
     
     private let viewModel = ToDoItemsVieWModel()
@@ -38,7 +37,7 @@ class ToDoTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ToDoEditViewController.identifier {
             guard let editViewController = segue.destination as? ToDoEditViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
-            let item = results![indexPath.row]
+            let item = viewModel.results![indexPath.row]
             editViewController.item = item
         }
     }
@@ -62,7 +61,9 @@ extension ToDoTableViewController {
 extension ToDoTableViewController {
     
     private func getItems() {
-        results = viewModel.getItems()
+        viewModel.getItems { [weak self] (results, error) in
+            self?.startObsering()
+        }
     }
     
 }
@@ -71,13 +72,13 @@ extension ToDoTableViewController {
 extension ToDoTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return results?.count ?? 0
+        return viewModel.results?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         
-        let item = results![indexPath.row]
+        let item = viewModel.results![indexPath.row]
         
         cell.textLabel?.text = item.title
         
@@ -92,12 +93,22 @@ extension ToDoTableViewController {
         performSegue(withIdentifier: ToDoEditViewController.identifier, sender: nil)
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.delete(itemAt: indexPath.row)
+        }
+    }
+    
 }
 
 extension ToDoTableViewController {
     
     private func startObsering() {
-        notificationToken = results?.observe { (changes: RealmCollectionChange) in
+        notificationToken = viewModel.results?.observe { (changes: RealmCollectionChange) in
             switch changes {
             case .initial:
                 self.tableView.reloadData()

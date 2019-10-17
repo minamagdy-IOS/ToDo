@@ -14,6 +14,8 @@ class ToDoItem: Object {
     
     @objc dynamic var detail = ""
     
+    @objc dynamic var createdDate = Date()
+    
     convenience init(title: String, detail: String) {
         self.init()
         self.title = title

@@ -13,7 +13,7 @@ class ToDoEditViewController: UIViewController {
     var item: ToDoItem?
     
     private var viewModel: ToDoItemEditViewModel!
-
+    
     static let identifier = "ToDoEditViewController"
     
     @IBOutlet private weak var titleTextField: UITextField!
@@ -22,7 +22,7 @@ class ToDoEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setupUI()
     }
@@ -56,18 +56,24 @@ extension ToDoEditViewController {
             return
         }
         if item == nil {
-            guard let error = viewModel.add(title: titleTextField.text!, detail: detailTextView.text!) else {
-                navigationController?.popViewController(animated: true)
-                return
+            viewModel.add(title: titleTextField.text!, detail: detailTextView.text!) { [weak self] (result, error) in
+                if result {
+                    self?.navigationController?.popViewController(animated: true)
+                }
+                if let error = error {
+                    print(error.localizedDescription)
+                }
             }
-            print(error.localizedDescription)
         }
         else {
-            guard let error = viewModel.update(title: titleTextField.text!, detail: detailTextView.text!) else {
-                navigationController?.popViewController(animated: true)
-                return
+            viewModel.update(title: titleTextField.text!, detail: detailTextView.text!) { [weak self] (result, error) in
+                if result {
+                    self?.navigationController?.popViewController(animated: true)
+                }
+                if let error = error {
+                    print(error.localizedDescription)
+                }
             }
-            print(error.localizedDescription)
         }
     }
     
