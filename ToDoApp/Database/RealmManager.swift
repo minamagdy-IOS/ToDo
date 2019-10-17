@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-typealias BooleamCompletion                  = (_ success: Bool, _ error: Error?) -> ()
+typealias BooleanCompletion                  = (_ success: Bool, _ error: Error?) -> ()
 typealias ObjectsCompletion<Element: Object> = (_ objects: Results<Element>?, _ error: Error?) -> ()
 typealias UpdateObjectBlock<Element: Object> = (_ object: Element?, _ error: Error?) -> ()
 
@@ -22,7 +22,7 @@ class RealmManager {
 
 extension RealmManager {
     
-    func add(object: Object, completion: BooleamCompletion? = nil) {
+    func add(object: Object, completion: BooleanCompletion? = nil) {
         queue.async {
             do {
                 let realm = try Realm()
@@ -55,7 +55,7 @@ extension RealmManager {
         }
     }
     
-    func delete(object: Object, completion: BooleamCompletion? = nil) {
+    func delete(object: Object, completion: BooleanCompletion? = nil) {
         let objectRef = ThreadSafeReference(to: object)
         queue.async {
             do {

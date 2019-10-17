@@ -20,13 +20,13 @@ class ToDoItemEditViewModel {
         self.item = item
     }
     
-    func add(title: String, detail: String, completion: BooleamCompletion? = nil) {
+    func add(title: String, detail: String, completion: BooleanCompletion? = nil) {
         item.title = title
         item.detail = detail
         RealmManager.sharedManager.add(object: item, completion: completion)
     }
     
-    func update(title: String, detail: String, completion: BooleamCompletion? = nil) {
+    func update(title: String, detail: String, completion: BooleanCompletion? = nil) {
         RealmManager.sharedManager.update(ToDoItem.self, object: self.item) { (object, error) in
             object?.title = title
             object?.detail = detail
@@ -36,7 +36,7 @@ class ToDoItemEditViewModel {
         }
     }
     
-    func delete(completion: BooleamCompletion? = nil) {
+    func delete(completion: BooleanCompletion? = nil) {
         RealmManager.sharedManager.delete(object: item, completion: completion)
     }
     

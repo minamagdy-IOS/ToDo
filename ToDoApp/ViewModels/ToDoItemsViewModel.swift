@@ -12,14 +12,14 @@ class ToDoItemsVieWModel {
     
     var results: Results<ToDoItem>?
     
-    func getItems(completion: BooleamCompletion? = nil) {
+    func getItems(completion: BooleanCompletion? = nil) {
         RealmManager.sharedManager.getObjects(type: ToDoItem.self, sortedBy: "createdDate") { (results, error) in
             self.results = results
             completion?(results != nil, error)
         }
     }
     
-    func delete(itemAt index: Int, completion: BooleamCompletion? = nil) {
+    func delete(itemAt index: Int, completion: BooleanCompletion? = nil) {
         guard let results = results else {
             completion?(false, nil)
             return
