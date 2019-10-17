@@ -58,6 +58,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB30C08F2358C0B400397160 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				EB46529323563AF500F6CBB4 /* RealmManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		EB30C0902358C0BA00397160 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EBB69B6A2356E6A1003DC45B /* ToDoItemsViewModel.swift */,
+				EBB69B6C2356FA7B003DC45B /* ToDoItemEditViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		EB46526D235632AF00F6CBB4 = {
 			isa = PBXGroup;
 			children = (
@@ -80,9 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				EB465279235632AF00F6CBB4 /* AppDelegate.swift */,
-				EB46529323563AF500F6CBB4 /* RealmManager.swift */,
-				EBB69B6A2356E6A1003DC45B /* ToDoItemsViewModel.swift */,
-				EBB69B6C2356FA7B003DC45B /* ToDoItemEditViewModel.swift */,
+				EB30C08F2358C0B400397160 /* Database */,
+				EB30C0902358C0BA00397160 /* ViewModels */,
 				EB46529023563A5600F6CBB4 /* Models */,
 				EB46528F23563A4B00F6CBB4 /* Views */,
 				EB46527F235632AF00F6CBB4 /* Main.storyboard */,
