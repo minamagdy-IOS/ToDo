@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--My To Do List-->
         <scene sceneID="sDx-PG-aWD">
             <objects>
                 <tableViewController id="23L-4e-1gD" customClass="ToDoTableViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                             <outlet property="delegate" destination="23L-4e-1gD" id="KP3-20-un7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="hZA-Hp-Cw7">
+                    <navigationItem key="navigationItem" title="My To Do List" id="hZA-Hp-Cw7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="a75-2V-ktu">
                             <connections>
                                 <segue destination="H79-Nx-nRz" kind="show" identifier="ToDoEditViewController" id="t1y-gu-WAw"/>
